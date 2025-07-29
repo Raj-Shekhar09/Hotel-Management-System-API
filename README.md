@@ -2,7 +2,7 @@
  i have used MVC structure for the Hotel-Management-System-API
 
  1.Models: -->
-              -User.js:
+              -User.js
               -Bookings.js
               -Payments.js
               -Rooms.js              -
@@ -16,4 +16,5 @@
  3.routes :-->  route.js
  4.middleware:--> auth.js
  
- These are connected to index.js  which ic compiled by node 
+ These are connected to index.js  which ic compiled by 
+ nodemon you can run by " npm run "
