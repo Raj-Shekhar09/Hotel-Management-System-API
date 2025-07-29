@@ -1,14 +1,14 @@
-const jwt = require('jsonwebtoken');
+`const jwt = require('jsonwebtoken');
 const JWT_SECRET = '8480954084';
 module.exports = (req, res, next) => {
   const authHeader = req.headers['authorization'];
   if (!authHeader) {
-    return res.status(401).json({ message: 'Token required' });
+    return res.json({ message: 'Token required' });
   }
 
   const token = authHeader.split(' ')[1];
   if (!token) {
-    return res.status(401).json({ message: 'Token required' });
+    return res.json({ message: 'Token required' });
   }
 
   try {
@@ -16,6 +16,6 @@ module.exports = (req, res, next) => {
     req.user = payload;
     next();
   } catch (err) {
-    return res.status(401).json({ message: 'Invalid token' });
+    return res.json({ message: 'Invalid token' });
   }
 };
