@@ -1,5 +1,6 @@
 # Hotel mangement
- i have used MVC structure
+ i have used MVC structure for the Hotel-Management-System-API
+
  1.Models: -->
               -User.js:
               -Bookings.js
