@@ -1,0 +1,18 @@
+const express = require('express')
+const rt  = express.Router()
+const auth    = require('../middleware/auth')
+const { bookRooms,myBooking } = require('../controllers/booking')
+const { register, login }= require('../controllers/user')
+const { sPayment }=require('../controllers/paytm')
+const { getRooms,addRoom,updateRoom,deleteRoom}= require('../controllers/rooms')
+rt.post('/register', register)
+rt.post('/login',login)
+rt.post('/book',auth, bookRooms)
+rt.get( '/my-bookings', auth, myBooking)
+rt.post('/pay', auth, sPayment)
+rt.get(    '/rooms',        getRooms)
+rt.post(   '/rooms', auth,  addRoom)
+rt.put(    '/rooms/:id', auth, updateRoom)
+rt.delete( '/rooms/:id', auth, deleteRoom)
+
+module.exports = rt
