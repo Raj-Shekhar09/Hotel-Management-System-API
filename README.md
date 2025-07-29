@@ -6,6 +6,7 @@
               -Bookings.js
               -Payments.js
               -Rooms.js              -
+
  2.Controllers:-->
                   -booking.js
                   -paytm.js
